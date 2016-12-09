@@ -1,5 +1,5 @@
 # Set working directory, load data files, load libraries
-# setwd("~/Dropbox/R/Skittles")
+setwd("~/Dropbox/R/Skittles")
 skittles<-read.csv("skittles.csv")
 library(reshape2)
 library(ggplot2)
