@@ -44,6 +44,7 @@ ggplot(skitbin,aes(x=Pak,y=variable))+
        caption="created by /u/zonination")+
   theme_bw()+
   theme(panel.grid=element_blank())
+ggsave("skit1.png",height=4,width=14,dpi=100,type="cairo-png")
 
 # Convert raw data into heatmap, mildly more pleasing than "skitbin"
 ggplot(melt(skittles,id="Pak"),aes(x=Pak,y=variable))+
@@ -58,6 +59,7 @@ ggplot(melt(skittles,id="Pak"),aes(x=Pak,y=variable))+
        x="Pack Number",y="Flavor",
        caption="created by /u/zonination")+
   theme_bw()
+ggsave("skit2.png",height=4,width=14,dpi=100,type="cairo-png")
 
 # Convert data into stacked bar chart. Yet even more pleasing.
 ggplot(melt(skittles,id="Pak"),aes(Pak,value))+
@@ -69,6 +71,7 @@ ggplot(melt(skittles,id="Pak"),aes(Pak,value))+
       caption="created by /u/zonination")+
   scale_x_continuous(breaks=1:36,minor_breaks=NULL)+
   theme_bw()
+ggsave("skit3.png",height=5,width=8,dpi=100,type="cairo-png")
 
 # Plot data in a violinplot, with added dotplot for effect.
 ggplot(melt(skittles,id="Pak"),aes(variable,value))+
@@ -83,6 +86,7 @@ ggplot(melt(skittles,id="Pak"),aes(variable,value))+
   scale_y_continuous()+
   geom_hline(yintercept=netmean,linetype=4)+
   theme_bw()
+ggsave("skit4.png",height=5,width=8,dpi=100,type="cairo-png")
 
 # Plot the summary statistics: Mean +/- 95% conf
 ggplot(skitsum,aes(x=flavor,y=mean))+
@@ -96,3 +100,4 @@ ggplot(skitsum,aes(x=flavor,y=mean))+
        caption="created by /u/zonination")+
   geom_hline(yintercept=netmean,linetype=4)+
   theme_bw()
+ggsave("skit5.png",height=5,width=8,dpi=100,type="cairo-png")
